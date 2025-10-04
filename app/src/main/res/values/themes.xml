@@ -1,9 +1,32 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.GitHubExplorer" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+<resources>
+    <style name="Theme.GHExplorer" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="android:statusBarColor">@color/md_bg</item>
+        <item name="android:navigationBarColor">@color/md_bg</item>
+        <item name="android:windowBackground">@color/md_bg</item>
+        <item name="colorSurface">@color/md_surface</item>
+        <item name="colorOnSurface">@color/md_onSurface</item>
+        <item name="toolbarStyle">@style/Widget.GH.Toolbar</item>
+        <item name="searchViewStyle">@style/Widget.GH.SearchView</item>
     </style>
 
-    <style name="Theme.GitHubExplorer" parent="Base.Theme.GitHubExplorer" />
+
+    <style name="Widget.GH.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@color/md_bg</item>
+        <item name="titleTextColor">@color/md_onSurface</item>
+        <item name="subtitleTextColor">@color/md_onSurfaceVariant</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.Circle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="Widget.GH.SearchView" parent="Widget.Material3.SearchView">
+        <item name="android:background">@drawable/bg_search</item>
+        <item name="android:textColor">@color/md_onSurface</item>
+        <item name="android:textColorHint">@color/md_onSurfaceVariant</item>
+        <item name="iconifiedByDefault">false</item>
+    </style>
+
+
 </resources>

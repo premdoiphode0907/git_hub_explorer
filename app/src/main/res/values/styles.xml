@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Text.GH" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/md_onSurface</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Text.GH.Title" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@color/md_onSurface</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Text.GH.Subtitle" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:textColor">@color/md_onSurfaceVariant</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+</resources>
