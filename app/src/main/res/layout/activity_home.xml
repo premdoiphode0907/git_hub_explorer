@@ -7,10 +7,11 @@
 
     <Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="GHExplorer"
-        app:titleCentered="false" />
+        android:title="Git Hub Repo Explorer"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center" />
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchView"
         style="@style/Widget.GH.SearchView"
@@ -18,11 +19,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginTop="10dp"
         android:queryHint="Search repositories"/>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="10dp"
         android:layout_weight="1">
 
         <androidx.recyclerview.widget.RecyclerView
@@ -38,12 +41,6 @@
             android:layout_width="56dp"
             android:layout_height="56dp"
             android:layout_gravity="center"/>
-        <TextView
-            android:id="@+id/errorText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Error occurred"
-            android:textAppearance="@style/Text.GH.Subtitle"/>
+
     </FrameLayout>
 </LinearLayout>

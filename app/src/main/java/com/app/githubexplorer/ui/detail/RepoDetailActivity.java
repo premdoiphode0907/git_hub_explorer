@@ -9,6 +9,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.app.githubexplorer.R;
 import com.app.githubexplorer.data.model.Repo;
 import com.bumptech.glide.Glide;
+import com.google.android.material.appbar.MaterialToolbar;
+
+import java.util.Objects;
 
 public class RepoDetailActivity extends AppCompatActivity {
     private static final String EXTRA_NAME = "extra_repo_name";
@@ -33,6 +36,14 @@ public class RepoDetailActivity extends AppCompatActivity {
         TextView desc = findViewById(R.id.description);
         TextView meta = findViewById(R.id.meta);
         Button open = findViewById(R.id.open);
+
+        MaterialToolbar tb = findViewById(R.id.toolbar);
+        setSupportActionBar(tb);
+        Objects.requireNonNull(getSupportActionBar()).setTitle("GitHub Repo Explorer");
+        tb.setNavigationOnClickListener(v -> finish());
+
+
+
         Glide.with(this).load(getIntent().getStringExtra(EXTRA_AVATAR)).placeholder(R.drawable.ic_avatar).into(avatar);
         title.setText(getIntent().getStringExtra(EXTRA_NAME));
         desc.setText(getIntent().getStringExtra(EXTRA_DESC));

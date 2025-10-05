@@ -32,7 +32,6 @@ public class HomeActivity extends AppCompatActivity {
 
         RecyclerView list = findViewById(R.id.recycler);
         View progress = findViewById(R.id.progress);
-        View error = findViewById(R.id.errorText);
         SearchView sv = findViewById(R.id.searchView);
 
         adapter = new RepoListAdapter(this, repo -> RepoDetailActivity.open(this, repo));
@@ -43,10 +42,6 @@ public class HomeActivity extends AppCompatActivity {
         vm.repos.observe(this, repos -> adapter.submit(repos));
         vm.loading().observe(this, isLoading ->
                 progress.setVisibility(isLoading != null && isLoading ? View.VISIBLE : View.GONE));
-        vm.error().observe(this, e -> {
-            error.setVisibility(e != null ? View.VISIBLE : View.GONE);
-            if (e != null) ((android.widget.TextView) error).setText(e);
-        });
 
         // Infinite scroll (simple)
         list.addOnScrollListener(new RecyclerView.OnScrollListener() {

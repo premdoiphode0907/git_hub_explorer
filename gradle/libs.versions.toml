@@ -1,5 +1,6 @@
 [versions]
 agp = "8.13.0"
+firebaseBom = "34.3.0"
 glide = "5.0.5"
 junit = "4.13.2"
 junitVersion = "1.1.5"
@@ -15,10 +16,15 @@ retrofit = "3.0.0"
 roomRuntime = "2.8.1"
 swiperefreshlayout = "1.1.0"
 firebaseDatabase = "22.0.1"
+firebaseVersion = "4.4.3"
+crashlyticsVersion = "3.0.6"
 
 [libraries]
 compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
+firebase-crashlytics-ndk = { module = "com.google.firebase:firebase-crashlytics-ndk" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -38,4 +44,6 @@ firebase-database = { group = "com.google.firebase", name = "firebase-database",
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
+firebase-service = { id = "com.google.gms.google-services", version.ref = "firebaseVersion" }
+firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "crashlyticsVersion" }
 
