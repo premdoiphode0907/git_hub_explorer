@@ -59,21 +59,27 @@ public class HomeActivity extends AppCompatActivity {
         sv.setQueryHint("Search repositories");
 
         sv.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override public boolean onQueryTextSubmit(String q) { return false; } // not needed
+            @Override public boolean onQueryTextSubmit(String q) { return false; }
 
             @Override public boolean onQueryTextChange(String s) {
                 if (pendingSearch != null) debounce.removeCallbacks(pendingSearch);
 
+                // If cleared, restore default
+                if (s == null || s.trim().isEmpty()) {
+                    currentQuery = "android";        // or keep a lastNonEmptyQuery variable
+                    currentPage = 1;
+                    vm.search(currentQuery, currentPage, 30);
+                    return true;
+                }
+
                 pendingSearch = () -> {
-                    String q = (s == null) ? "" : s.trim();
-                    if (q.length() < 1) return;           // start after first character
-                    if (q.equals(currentQuery)) return;    // skip identical query
+                    String q = s.trim();
+                    if (q.equals(currentQuery)) return;
                     currentQuery = q;
                     currentPage = 1;
-                    vm.search(currentQuery, 1, 30);        // switches LiveData via ViewModel
+                    vm.search(currentQuery, currentPage, 30);
                 };
-
-                debounce.postDelayed(pendingSearch, 400);  // 300–500 ms is typical
+                debounce.postDelayed(pendingSearch, 400);
                 return true;
             }
         });

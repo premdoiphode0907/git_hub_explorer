@@ -39,7 +39,7 @@ public class RepoDetailActivity extends AppCompatActivity {
 
         MaterialToolbar tb = findViewById(R.id.toolbar);
         setSupportActionBar(tb);
-        Objects.requireNonNull(getSupportActionBar()).setTitle("GitHub Repo Explorer");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Git Hub Repo Explorer");
         tb.setNavigationOnClickListener(v -> finish());
 
 
